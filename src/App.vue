@@ -1,9 +1,12 @@
 <template>
   <v-app class="bg-black">
-    <Navbar></Navbar>
+    <Navbar></Navbar> <!--Navvigator Bar component-->
+
+
+    <!--Categories Section -->
+
 
     <v-container fluid class="mt-16 bg-red-lighten-5 " style="left: 0;">
-
       <v-card>
         <v-row class="bg-transparent">
           <v-col cols="12" class="bg-transparent d-flex justify-center justify-space-around  mx-2">
@@ -16,6 +19,9 @@
         </v-row>
       </v-card>
     </v-container>
+
+
+    <!--Options  Section -->
 
 
     <v-toolbar color="white " class="px-2 ">
@@ -31,12 +37,16 @@
       <span class="text-h8 mx-2">10.000$</span>
     </v-toolbar>
     <v-divider></v-divider>
+
+
+    <!--Sort Section -->
+
+
     <v-toolbar app dark fluid class="bg-white">
       <v-toolbar-title>
         LOUNGUE CHAIR
       </v-toolbar-title>
       <v-spacer>
-
       </v-spacer>
       <span class="mr-6"><v-btn-toggle v-model="toggle_exclusive">
           <strong class="mt-3 mr-2"> Sort by :</strong>
@@ -48,19 +58,24 @@
     </v-toolbar>
 
 
+    <!--Product Section -->
+
 
     <v-row class=" pa-4 bg-red-lighten-5">
       <v-col cols="12" sm="3" v-for="(chair, i) in chairs" :key="i">
-        <v-card height="300" align="center" flat outlined tile>
+        <v-card height="" align="center" flat outlined tile>
           <v-img :src="chair.image" :class="chair.class" contain width="200" height="200" class="mt-4">
-
-
           </v-img>
           <v-card-text class="mt-n1"> <strong> {{ chair.title }} </strong> </v-card-text>
           <v-card-text class="mt-n2"> <strong> {{ chair.price }} </strong> </v-card-text>
         </v-card>
       </v-col>
     </v-row>
+
+
+    <!--Footer Section -->
+
+
     <v-toolbar class="bg-white">
       <v-spacer></v-spacer>
       <v-toolbar-title class="ml-4 mr-2">
@@ -74,7 +89,6 @@
 
 
   </v-app>
-
 </template>
 
 <script setup>
@@ -83,10 +97,13 @@ import { ref } from 'vue'
 
 const toggle_exclusive = ref(0)
 
-const type = ref(["SLEEPING BEDS", "LOUNGE CHAIRS", "CHAIRS", "OFFICE CHAIRS", "TABLES NIGHTSTANDS", "KITCHEN FURNITURE"])
+const type = ref(["SLEEPING BEDS", "LOUNGE CHAIRS", "CHAIRS", "OFFICE CHAIRS", "TABLES NIGHTSTANDS", "KITCHEN FURNITURE"]) /* For The future features */
 const chair = ref(true)
 const other = ref(false)
 const slider2 = ref(50)
+
+/* Categories Data */
+
 const categories = ref([
   { path: require('../public/9.png'), title: "SLEEPING BEDS" },
   { path: require('../public/2.png'), title: "LOUNGE CHAIRS" },
@@ -95,6 +112,9 @@ const categories = ref([
   { path: require('../public/8.jpg'), title: "TABLES NIGHTSTANDS" },
   { path: require('../public/6.png'), title: "KITCHEN FURNITURE" },
 ])
+
+/* Chairs Data*/
+
 const chairs = ref([
   {
     class: "pa-0",
@@ -215,6 +235,4 @@ const chairs = ref([
 
 
 </script>
-<style>
-
-</style>
+<style></style>
