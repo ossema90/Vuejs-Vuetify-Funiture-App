@@ -229,10 +229,4 @@ const chairs = ref([
     category: "CHAIRS",
   },
 ])
-
-
-
-
-
 </script>
-<style></style>
